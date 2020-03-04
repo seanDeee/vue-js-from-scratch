@@ -30,8 +30,8 @@
 
         <div id="app">
             <input type="text" v-model="price">
-            <div>Tax {{ taxFormatted }}</div>
-            <div>Total {{ totalFormatted }}</div>
+            <div>Tax {{ moneyFormat(tax) }}</div>
+            <div>Total {{ moneyFormat(total) }}</div>
         </div>
 
 
@@ -59,18 +59,18 @@
                 price: 100,
             },
 
+            methods: {
+                moneyFormat: function(price) {
+                    return '$' + price;
+                }
+            },
+
             computed: {
                 tax: function() {
                     return this.price * 0.2;
                 },
-                taxFormatted: function() {
-                    return '$' + this.tax;
-                },
                 total: function() {
                     return parseInt(this.price) + this.tax;
-                },
-                totalFormatted: function() {
-                    return '$' + this.total;
                 },
             },
         });
