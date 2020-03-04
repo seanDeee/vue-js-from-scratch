@@ -48,12 +48,8 @@
     <main>
 
         <div id="app">
-            <ul>
-                <li v-for="todo in items">{{ todo }}</li>
-            </ul>
-
-            <input type="text" v-model="item">
-            <button @click="items.push(item)">Add item</button>
+        <h1 v-if="hidden">Text</h1>
+        <h1 v-else>Another</h1>
         </div>
 
 
@@ -78,12 +74,7 @@
             el: '#app',
 
             data: {
-                item: '',
-                items: [
-                    'item1',
-                    'item2'
-                ]
-
+                hidden: false,
             }
         });
     </script>
