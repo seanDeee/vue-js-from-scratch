@@ -29,13 +29,9 @@
     <main>
 
         <div id="app">
-            <ul>
-                <li v-for="item in items">{{ item.text }}
-                    <div v-if="item.checked">Checked!</div>
-                    <button @click="item.checked = ! item.checked">Toggle</button>
-                </li>
-
-            </ul>
+            <input type="text" v-model="price">
+            <div>Tax {{ taxFormatted }}</div>
+            <div>Total {{ totalFormatted }}</div>
         </div>
 
 
@@ -60,20 +56,23 @@
             el: '#app',
 
             data: {
-                items: [{
-                        text: 'item1',
-                        checked: true
-                    },
-                    {
-                        text: 'item2',
-                        checked: true
-                    },
-                    {
-                        text: 'item3',
-                        checked: false
-                    },
-                ],
-            }
+                price: 100,
+            },
+
+            computed: {
+                tax: function() {
+                    return this.price * 0.2;
+                },
+                taxFormatted: function() {
+                    return '$' + this.tax;
+                },
+                total: function() {
+                    return parseInt(this.price) + this.tax;
+                },
+                totalFormatted: function() {
+                    return '$' + this.total;
+                },
+            },
         });
     </script>
 </body>
