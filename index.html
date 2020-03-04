@@ -7,15 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{Vue From Scratch}</title>
 
-    <!-- META INFO -->
-    <!-- <meta name="description" content="">
-		<meta name="keywords" content="">
-		<meta property="og:title" content="トップ">
-		<meta property="og:type" content="website">
-		<meta property="og:description" content="">
-		<meta property="og:url" content="./">
-		<meta property="og:image" content="./assets/img/og.png">-->
-
     <!-- FAVICON -->
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="./assets/img/favicon.ico" type="image/vnd.microsoft.icon">
@@ -30,16 +21,6 @@
 
     <!-- SCRIPT -->
     <script src="./assets/js/vendor/modernizr-2.8.3.min.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
-		<script>
-				(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-				e=o.createElement(i);r=o.getElementsByTagName(i)[0];s
-				e.src='//www.google-analytics.com/analytics.js';
-				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-				ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-		</script> -->
 </head>
 
 <body class="home" id="top">
@@ -48,8 +29,13 @@
     <main>
 
         <div id="app">
-        <h1 v-if="hidden">Text</h1>
-        <h1 v-else>Another</h1>
+            <ul>
+                <li v-for="item in items">{{ item.text }}
+                    <div v-if="item.checked">Checked!</div>
+                    <button @click="item.checked = ! item.checked">Toggle</button>
+                </li>
+
+            </ul>
         </div>
 
 
@@ -74,7 +60,19 @@
             el: '#app',
 
             data: {
-                hidden: false,
+                items: [{
+                        text: 'item1',
+                        checked: true
+                    },
+                    {
+                        text: 'item2',
+                        checked: true
+                    },
+                    {
+                        text: 'item3',
+                        checked: false
+                    },
+                ],
             }
         });
     </script>
