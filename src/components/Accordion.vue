@@ -1,9 +1,11 @@
 <template>
-    <div>
-        <p> {{ item.title }} </p>
-        <p @click="toggle = ! toggle"> Details </p>
-        <p v-if="toggle"> {{ item.description }} </p>
-    </div>
+    <section class="accordion">
+        <div class="accordion-container">
+            <h1> {{ item.title }} </h1>
+            <p class="button-trigger" @click="toggle = ! toggle"> Details </p>
+            <p class="accordion-description" v-if="toggle"> {{ item.description }} </p>
+        </div>
+    </section>
 </template>
 
 <script>

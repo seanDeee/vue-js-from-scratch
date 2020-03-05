@@ -1,7 +1,49 @@
 /**************************************
 home.scss
 ***************************************/
-.home {}
+.home {
+    main {
+
+        #app {
+            .accordion {
+                margin: 0 auto;
+                width: 100%;
+
+                .accordion-container {
+                    margin: 0 auto;
+                    width: 100%;
+                    max-width: 1000px;
+                    display: block;
+                    font-size: 0;
+                    letter-spacing: 0;
+
+                    h1 {
+                        margin-right: 30px;
+                        display: inline-block;
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-size: 20px;
+
+                        &.button-trigger {
+                            display: inline-block;
+                            cursor: pointer;
+                        }
+
+                        &.accordion-description {
+                            margin-top: 10px;
+                            margin-bottom: 30px;
+                            transition: all .5s ease;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
 
 
 

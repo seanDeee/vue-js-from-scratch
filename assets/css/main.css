@@ -243,6 +243,33 @@ footer
 /**************************************
 home.scss
 ***************************************/
+.home main #app .accordion {
+  margin: 0 auto;
+  width: 100%; }
+  .home main #app .accordion .accordion-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    font-size: 0;
+    letter-spacing: 0; }
+    .home main #app .accordion .accordion-container h1 {
+      margin-right: 30px;
+      display: inline-block;
+      font-size: 30px; }
+    .home main #app .accordion .accordion-container p {
+      font-size: 20px; }
+      .home main #app .accordion .accordion-container p.button-trigger {
+        display: inline-block;
+        cursor: pointer; }
+      .home main #app .accordion .accordion-container p.accordion-description {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        -webkit-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+        width: 100%; }
+
 /******************************
     SP
 *******************************/
